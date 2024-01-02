@@ -1,6 +1,8 @@
 # Transformers ライブラリの利用
 
-HuggingFace の Transformers ライブラリを使う例です。
+HuggingFace の Transformers ライブラリを使う例を紹介します。
+
+## 手順
 
 仮想環境を作成し、tensorflow と transformers ライブラリをインストールします。
 
@@ -15,25 +17,9 @@ $ source venv/bin/activate
 
 ```
 (venv) $ python generateText.py
-
 ```
 
-`generateText.py` は以下の通りです。
-
-```python
-from transformers import pipeline, set_seed
-
-generator = pipeline('text-generation', 
-model='gpt2')
-
-set_seed(42)
-
-result = generator("New York is a city, ", max_length=30, num_return_sequences=5)
-
-print(result)
-```
-
-以下のような出力を確認してください。
+以下のように、コードを実行し、結果を確認してください。
 
 ```
 (venv) transformers-huggingface-demo % python generateText.py
